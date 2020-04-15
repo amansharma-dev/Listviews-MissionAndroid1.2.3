@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -62,6 +63,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //insert in row
         sqLiteDatabase.insert(Util.TABLE_NAME,null,contentValues);
 
+        //check if data added
+        Log.d("INSERT", "addContact: data added successfully");
         //close db connection
         sqLiteDatabase.close();
     }
